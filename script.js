@@ -311,8 +311,17 @@ contactForm.addEventListener('submit', async function (e) {
   }
 });
 
+const resumeBtn = document.querySelector('.resume-btn');
 
-
+resumeBtn.addEventListener('click', function(e) {
+  e.preventDefault(); 
+  const link = document.createElement('a');
+  link.href = this.href;
+  link.download = 'Venkatesh_Kumar_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
 
 
 
