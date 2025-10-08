@@ -1629,3 +1629,352 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center hero-container */
+  overflow: hidden;
+  padding: 100px 20px 60px; /* reduce top/bottom padding */
+}
+
+#hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: brightness(0.6);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  z-index: 2;
+}
+/* Tablets */
+@media (max-width: 1024px) {
+  #hero {
+    padding: 80px 20px 50px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+  }
+
+  .hero-image img {
+    width: 280px;
+    height: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #hero {
+    padding: 60px 20px 40px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+  }
+
+  .hero-text .typed-role {
+    font-size: 18px;
+    min-height: auto;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 280px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text h2 {
+    font-size: 18px;
+  }
+
+  .hero-image img {
+    width: 180px;
+    height: 220px;
+  }
+
+  .hero-buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 28px;
+  }
+}
+@media (max-width: 768px) {
+  /* Hero Container */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 80px; /* adds gap between navbar and hero */
+  }
+
+  /* Hero Text */
+  .hero-text {
+    text-align: center;
+  }
+
+  /* Hero Image */
+  .hero-image img {
+    width: 200px;       /* reduced size */
+    height: 250px;      /* reduced size */
+    margin: 20px 0;     /* add some spacing */
+  }
+
+  /* Social Icons */
+  #hero .social-icons {
+    justify-content: center; /* center the social icons */
+    margin-top: 15px;       /* add spacing below text */
+    position: relative;
+    z-index: 3;             /* make sure they are visible above overlays */
+  }
+}
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 250px;  /* Reduce image size */
+    height: auto;
+    margin: 20px 0; /* Add some gap */
+  }
+
+  /* Make social icons visible and centered */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 15px; /* spacing between icons */
+  }
+
+  .social-icons a {
+    font-size: 28px; /* adjust size for smaller screens */
+  }
+}
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px; /* gap from navbar */
+    padding-bottom: 80px;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text h2 {
+    font-size: 22px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero-image img {
+    width: 220px; /* smaller image */
+    height: 280px;
+    border-radius: 200px;
+  }
+
+  /* Move social icons below buttons */
+  #hero .social-icons {
+    position: static; /* not fixed */
+    transform: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  #hero .social-icons a {
+    font-size: 28px;
+  }
+}
+
+
+/* Journey Timeline - Mobile / Tablets */
+@media (max-width: 768px) {
+  #journey .timeline {
+    height: auto; /* grow based on content */
+    padding-left: 40px; /* space for timeline line */
+    padding-right: 20px;
+  }
+
+  #journey .timeline::after {
+    left: 20px; /* timeline vertical line */
+    top: 0;
+    bottom: 0;
+  }
+
+  #journey .timeline-dot {
+    left: 20px;
+    top: auto;
+    transform: translateX(-50%);
+  }
+
+  #journey .timeline-item,
+  #journey .timeline-item.left,
+  #journey .timeline-item.right {
+    position: relative; /* stack vertically */
+    width: 100%;
+    left: 0;
+    top: auto !important;
+    margin-bottom: 40px; /* spacing between boxes */
+    text-align: left;
+    opacity: 1; /* make sure all items are visible */
+  }
+
+  #journey .timeline-item .content {
+    max-width: 100%;
+    margin-left: 50px; /* space from timeline line */
+    text-align: left;
+  }
+
+  #journey .timeline-item i.journey-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+    color: var(--main-color);
+  }
+
+  /* Optional: alternate background for visual distinction */
+  #journey .timeline-item:nth-child(even) .content {
+    background: var(--bg-accent-light);
+  }
+
+  #journey .timeline-item:nth-child(odd) .content {
+    background: var(--bg-card);
+  }
+}
+/* Timeline - Mobile / Tablets Fix */
+@media (max-width: 768px) {
+  #journey {
+    height: auto;       /* Let timeline grow */
+    overflow: visible;  /* Ensure nothing gets cut off */
+    padding: 40px 20px;
+  }
+
+  #journey .timeline {
+    position: relative;
+    height: auto;       /* Remove fixed height */
+    padding-left: 40px; /* space for timeline line */
+  }
+
+  #journey .timeline::after {
+    left: 20px;         /* timeline vertical line */
+    top: 0;
+    bottom: 0;
+    background: var(--main-color);
+  }
+
+  #journey .timeline-dot {
+    left: 20px;
+    top: auto;
+    transform: translateX(-50%);
+    background: var(--main-color);
+  }
+
+  #journey .timeline-item,
+  #journey .timeline-item.left,
+  #journey .timeline-item.right {
+    position: relative;  /* stack vertically */
+    width: 100%;
+    left: 0;
+    top: auto !important;
+    margin-bottom: 30px; /* spacing between boxes */
+    text-align: left;
+    opacity: 1;          /* fully visible */
+  }
+
+  #journey .timeline-item .content {
+    max-width: 100%;
+    margin-left: 50px;  /* space from timeline line */
+    background: var(--bg-card); /* color for boxes */
+    color: #333;        /* text color */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  #journey .timeline-item i.journey-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+    color: var(--main-color);
+  }
+}
